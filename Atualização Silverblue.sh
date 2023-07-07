@@ -35,4 +35,25 @@ rpm-ostree upgrade;
 ##Atualização do Flatpak##
 flatpak update -y;
 
+
+  ###Universal Blue###
+  ##Comandos para troca de interface pelo Silverblue##
+##Rebase XFCE
+#rpm-ostree rebase ostree-unverified-registry:ghcr.io/ublue-os/vauxite-main:latest;
+
+##Rebase XFCE NVIDIA
+#rpm-ostree rebase ostree-unverified-registry:ghcr.io/ublue-os/vauxite-nvidia:latest;
+
+##Rebase Silverblue##
+#rpm-ostree rebase ostree-unverified-registry:ghcr.io/ublue-os/silverblue-main:latest;
+
+##Rebase Silverblue NVIDIA##
+#rpm-ostree rebase ostree-unverified-registry:ghcr.io/ublue-os/silverblue-nvidia:latest;
+
+##Rebase Gnome OS##
+#rpm-ostree rebase ostree-unverified-registry:ghcr.io/ublue-os/beyond:latest;
+
+##Rebase Gnome OS NVIDIA##
+#rpm-ostree rebase ostree-unverified-registry:ghcr.io/ublue-os/beyond-nvidia:latest;
+
 systemctl reboot
