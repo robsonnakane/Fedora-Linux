@@ -20,7 +20,7 @@ sudo dnf distro-sync -y; ##sincroniza os pacotes instalados com as últimas vers
 #sudo dnf install neofetch -y; sudo dnf install simple-scan -y; sudo dnf install java-latest-openjdk -y; sudo dnf install btop -y; sudo dnf install gnome-boxes -y; sudo dnf install krusader -y; sudo dnf install flatpak -y; sudo dnf install kitty -y; 
 
 ##instalação dos programas nativos com opção de Flatpak##
-#sudo dnf install kdenlive -y; sudo dnf install transmission -y; sudo dnf install mediawriter -y; sudo dnf install gedit -y; sudo dnf install audacious -y; sudo dnf install asunder -y; sudo dnf install tuxguitar -y; sudo dnf install thunderbird -y; sudo dnf install wine -y;
+#sudo dnf install kdenlive -y; sudo dnf install transmission -y; sudo dnf install mediawriter -y; sudo dnf install gedit -y; sudo dnf install audacious -y; sudo dnf install asunder -y; sudo dnf install tuxguitar -y; sudo dnf install thunderbird -y; sudo dnf install wine -y; sudo dnf install gcalculator -y;
 
 ##Instalação dos programas Flatpak sem opção para Flatpak##
 #flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo;

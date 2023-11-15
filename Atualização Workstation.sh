@@ -23,6 +23,14 @@ sudo dnf distro-sync -y; ##sincroniza os pacotes instalados com as últimas vers
 #flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo; 
 #flatpak install flathub com.spotify.Client -y; flatpak install flathub org.videolan.VLC -y; flatpak install flathub com.valvesoftware.Steam -y; flatpak install flathub us.zoom.Zoom -y; flatpak install flathub org.kde.kdenlive -y; flatpak install flathub org.onlyoffice.desktopeditors -y; flatpak install flathub com.skype.Client -y; flatpak install flathub com.adobe.Flash-Player-Projector -y; flatpak install flathub org.gnome.Extensions -y; flatpak install flathub com.transmissionbt.Transmission -y; flatpak install flathub org.inkscape.Inkscape -y; flatpak install flathub org.mozilla.Thunderbird -y; flatpak install flathub org.raspberrypi.rpi-imager -y; flatpak install flathub org.fedoraproject.MediaWriter -y; flatpak install flathub org.gnome.gedit -y; flatpak install flathub com.google.Chrome -y; flatpak install flathub org.gnome.Firmware -y; flatpak install flathub org.atheme.audacious -y; flatpak install flathub ca.littlesvr.asunder -y;  flatpak install flathub ar.com.tuxguitar.TuxGuitar -y;
 
+###Atualização de versão
+##1. To update your Fedora release from the command-line do:
+#sudo dnf upgrade --refresh; systemctl reboot
+##2. Install the dnf-plugin-system-upgrade package if it is not currently installed: ( atualizar o releasever para a próxima versão ) 
+#sudo dnf install dnf-plugin-system-upgrade; sudo dnf system-upgrade download --releasever=40; sudo dnf system-upgrade reboot
+##Clean-up old packages
+#sudo dnf repoquery --unsatisfied; sudo dnf repoquery --duplicates; sudo dnf remove --duplicates; systemctl reboot
+
 ##Atualização do Flatpak##
 flatpak update -y;
 
