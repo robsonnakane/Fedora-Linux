@@ -20,14 +20,14 @@ sudo dnf distro-sync -y; ##sincroniza os pacotes instalados com as últimas vers
 #sudo dnf install neofetch -y; sudo dnf install simple-scan -y; sudo dnf install java-latest-openjdk -y; sudo dnf install btop -y; sudo dnf install gnome-boxes -y; sudo dnf install krusader -y; sudo dnf install flatpak -y; sudo dnf install kitty -y; 
 
 ##instalação dos programas nativos com opção de Flatpak##
-#sudo dnf install kdenlive -y; sudo dnf install transmission -y; sudo dnf install mediawriter -y; sudo dnf install gedit -y; sudo dnf install audacious -y; sudo dnf install asunder -y; sudo dnf install tuxguitar -y; sudo dnf install thunderbird -y; sudo dnf install wine -y; sudo dnf install gcalculator -y;
+#sudo dnf install kdenlive -y; sudo dnf install mediawriter -y; sudo dnf install gedit -y; sudo dnf install audacious -y; sudo dnf install asunder -y; sudo dnf install tuxguitar -y; sudo dnf install thunderbird -y; sudo dnf install wine -y; sudo dnf install gcalculator -y;
 
 ##Instalação dos programas Flatpak sem opção para Flatpak##
 #flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo;
 #flatpak install flathub com.spotify.Client -y; flatpak install flathub org.videolan.VLC -y; flatpak install flathub com.valvesoftware.Steam -y; flatpak install flathub us.zoom.Zoom -y; flatpak install flathub org.onlyoffice.desktopeditors -y; flatpak install flathub com.skype.Client -y; flatpak install flathub com.adobe.Flash-Player-Projector -y; flatpak install flathub org.raspberrypi.rpi-imager -y; flatpak install flathub com.google.Chrome -y; flatpak install flathub org.gnome.Firmware -y; 
 
 ##Opções de programas Flatpak com programas nativos##
-#flatpak install flathub org.kde.kdenlive -y; flatpak install flathub com.transmissionbt.Transmission -y; flatpak install flathub org.inkscape.Inkscape -y; flatpak install flathub org.mozilla.Thunderbird -y; flatpak install flathub org.fedoraproject.MediaWriter -y; flatpak install flathub org.gnome.gedit -y; flatpak install flathub org.atheme.audacious -y; flatpak install flathub ca.littlesvr.asunder -y; flatpak install flathub ar.com.tuxguitar.TuxGuitar -y;
+#flatpak install flathub org.kde.kdenlive -y; flatpak install flathub org.inkscape.Inkscape -y; flatpak install flathub org.mozilla.Thunderbird -y; flatpak install flathub org.fedoraproject.MediaWriter -y; flatpak install flathub org.gnome.gedit -y; flatpak install flathub org.atheme.audacious -y; flatpak install flathub ca.littlesvr.asunder -y; flatpak install flathub ar.com.tuxguitar.TuxGuitar -y;
 
 ###Atualização de versão
 ##1. To update your Fedora release from the command-line do:
