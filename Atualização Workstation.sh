@@ -17,7 +17,7 @@ sudo dnf upgrade --refresh -y; ##atualiza um ou mais pacotes em seu sistema
 sudo dnf distro-sync -y; ##sincroniza os pacotes instalados com as últimas versões disponíveis
 
 ##instalação dos programas
-#sudo dnf install neofetch -y; sudo dnf install simple-scan -y; sudo dnf install gnome-tweaks -y; sudo dnf install java-latest-openjdk -y; sudo dnf install btop -y; sudo dnf install kitty -y; sudo dnf install boxes -y;
+#sudo dnf install neofetch -y; sudo dnf install simple-scan -y; sudo dnf install gnome-tweaks -y; sudo dnf install java-latest-openjdk -y; sudo dnf install btop -y; sudo dnf install kitty -y; sudo dnf install boxes -y; sudo dnf install dnf-plugin-system-upgrade;
 
 ##Instalação dos programas Flatpak##
 #flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo; 
