@@ -15,6 +15,7 @@ sudo dnf check -y; ##verifica se há problemas no packagedb
 sudo dnf check-update -y; ##verifica se há atualizações de pacote disponíveis
 sudo dnf upgrade --refresh -y; ##atualiza um ou mais pacotes em seu sistema
 sudo dnf distro-sync -y; ##sincroniza os pacotes instalados com as últimas versões disponíveis
+sudo grub2-mkconfig -o /boot/grub2/grub.cfg; ##Atualiza o grub
 
 ##instalação dos programas
 #sudo dnf install neofetch -y; sudo dnf install simple-scan -y; sudo dnf install gnome-tweaks -y; sudo dnf install java-latest-openjdk -y; sudo dnf install btop -y; sudo dnf install kitty -y; sudo dnf install boxes -y;
