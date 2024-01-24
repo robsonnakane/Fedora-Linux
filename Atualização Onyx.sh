@@ -26,7 +26,7 @@ rpm-ostree upgrade;
 rpm-ostree install neofetch; rpm-ostree install simple-scan; rpm-ostree install lshw-gui; rpm-ostree install java-latest-openjdk; rpm-ostree install btop; rpm-ostree install kitty; rpm-ostree install boxes; rpm-ostree install kate;
 
 ##Atualização de versão##
-#rpm-ostree rebase fedora:fedora/38/x86_64/silverblue;
+#rpm-ostree rebase fedora:fedora/38/x86_64/onyx;
 
 ##Instalação dos programas Flatpak##
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo; 
