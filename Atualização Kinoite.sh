@@ -23,7 +23,7 @@ ostree remote refs fedora;
 rpm-ostree upgrade;
 
 ##Instalação de programas##
-#rpm-ostree install neofetch; rpm-ostree install foomatic; rpm-ostree install simple-scan; rpm-ostree install lshw-gui; rpm-ostree install java-latest-openjdk; rpm-ostree install btop; rpm-ostree install kitty; rpm-ostree install boxes; rpm-ostree install gnome-disk-utility; rpm-ostree install lsd; rpm-ostree install kate; rpm-ostree install krusader; rpm-ostree install thunderbird; rpm-ostree install kcalc; rpm-ostree install krename; rpm-ostree install kget; rpm-ostree install transmission;
+#rpm-ostree install neofetch; rpm-ostree install simple-scan; rpm-ostree install lshw-gui; rpm-ostree install java-latest-openjdk; rpm-ostree install btop; rpm-ostree install kitty; rpm-ostree install gnome-boxes; rpm-ostree install gnome-disk-utility; rpm-ostree install lsd; rpm-ostree install emacs; rpm-ostree install krusader; rpm-ostree install thunderbird; rpm-ostree install kcalc; rpm-ostree install krename; rpm-ostree install kget; rpm-ostree install transmission; rpm-ostree install foomatic;
 
 ##Atualização de versão##
 #rpm-ostree rebase fedora:fedora/40/x86_64/kinoite;
