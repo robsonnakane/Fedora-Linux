@@ -23,7 +23,7 @@ ostree remote refs fedora;
 rpm-ostree upgrade;
 
 ##Instalação de programas##
-#rpm-ostree install neofetch; rpm-ostree install foomatic; rpm-ostree install simple-scan; rpm-ostree install lshw-gui; rpm-ostree install gnome-tweaks; rpm-ostree install java-latest-openjdk; rpm-ostree install btop; rpm-ostree install kitty; rpm-ostree install boxes;
+#rpm-ostree install screenfetch; rpm-ostree install foomatic; rpm-ostree install simple-scan; rpm-ostree install lshw-gui; rpm-ostree install gnome-tweaks; rpm-ostree install java-latest-openjdk; rpm-ostree install btop; rpm-ostree install kitty; rpm-ostree install boxes;
 
 ##Atualização de versão##
 #rpm-ostree rebase fedora:fedora/38/x86_64/silverblue;
