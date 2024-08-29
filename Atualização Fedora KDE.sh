@@ -18,7 +18,7 @@ sudo dnf distro-sync -y; ##sincroniza os pacotes instalados com as últimas vers
 sudo grub2-mkconfig -o /boot/grub2/grub.cfg; ##Atualiza o grub
 
 ##instalação dos programas
-#sudo dnf install screenfetch -y; sudo dnf install foomatic -y; sudo dnf install simple-scan -y; sudo dnf install java-latest-openjdk -y; sudo dnf install btop -y; sudo dnf install kitty -y; sudo dnf install gnome-disks -y; sudo dnf install boxes -y;
+#sudo dnf install fastfetch -y; sudo dnf install foomatic -y; sudo dnf install simple-scan -y; sudo dnf install java-latest-openjdk -y; sudo dnf install btop -y; sudo dnf install kitty -y; sudo dnf install gnome-disks -y; sudo dnf install boxes -y;
 
 ##Instalação dos programas Flatpak##
 #flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo;
