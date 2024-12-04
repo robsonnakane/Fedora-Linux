@@ -18,6 +18,21 @@ function atualizar_sistema() {
   sudo dnf5 upgrade --refresh -y
   sudo dnf5 distro-sync -y
   sudo grub2-mkconfig -o /boot/grub2/grub.cfg
+# Verifique se o usuário possui privilégios de root
+if [[ $UID -ne 0 ]]; then
+  echo "Você precisa executar este script com privilégios de root."
+  exit 1
+fi
+
+# Instale o plugin de atualização do sistema
+sudo dnf5 install dnf-plugin-system-upgrade
+
+# Baixe os metadados da nova versão
+sudo dnf5 system-upgrade download --releasever=$versao_fedora_destino
+
+# Realize a atualização
+sudo dnf5 system-upgrade
+
 }
 
 function instalar_flatpak() {
