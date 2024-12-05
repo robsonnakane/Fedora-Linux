@@ -10,29 +10,15 @@
 #nano /home/robsonnakane/Documentos/'Atualização Workstation.sh'#
 
 # Funções para organizar o código
-function instalar_pacotes() {
-  sudo dnf5 install -y "$@"
-}
-
 function atualizar_sistema() {
   sudo dnf5 upgrade --refresh -y
+  sudo dnf5 system-upgrade download --releasever=$versao_fedora_destino
   sudo dnf5 distro-sync -y
   sudo grub2-mkconfig -o /boot/grub2/grub.cfg
-# Verifique se o usuário possui privilégios de root
-if [[ $UID -ne 0 ]]; then
-  echo "Você precisa executar este script com privilégios de root."
-  exit 1
-fi
+}	
 
-# Instale o plugin de atualização do sistema
-sudo dnf5 install dnf-plugin-system-upgrade
-
-# Baixe os metadados da nova versão
-sudo dnf5 system-upgrade download --releasever=$versao_fedora_destino
-
-# Realize a atualização
-sudo dnf5 system-upgrade
-
+function instalar_pacotes() {
+  sudo dnf5 install -y "$@"
 }
 
 function instalar_flatpak() {
@@ -47,17 +33,18 @@ function verificar_atualizacoes() {
   houve_atualizacao=$(dnf history | grep -i upgrade | wc -l)
   if [ $houve_atualizacao -gt 0 ]; then
     echo "$(date +"%Y-%m-%d %H:%M:%S") - Houve atualizações. Reiniciando o sistema." >> log.txt
-    notify-send "Atualização do sistema" "O sistema será reiniciado em 30 segundos."
-    sleep 30
+    notify-send "Atualização do sistema" "O sistema será reiniciado em 5 segundos."
+    sleep 5
     sudo systemctl reboot
+#Em caso de atualização de nova versão, trocar o reboot do sistema    
+    #sudo dnf5 system-upgrade reboot
   else
-    which foobar
     echo "Não há atualizações disponíveis."
   fi
 }
 
 # Configurações personalizáveis
-pacotes_a_instalar=("fastfetch" "foomatic" "simple-scan" "gnome-tweaks" "java-latest-openjdk" "btop" "kitty" "boxes" "thunderbird" "vlc" "audacious" "steam-devices")
+pacotes_a_instalar=("dnf-plugin-system-upgrade" "fastfetch" "foomatic" "simple-scan" "gnome-tweaks" "java-latest-openjdk" "btop" "kitty" "boxes" "thunderbird" "vlc" "audacious" "steam-devices")
 # Adicione os IDs dos pacotes Flatpak aqui
 pacotes_flatpak=("com.spotify.Client" "us.zoom.Zoom" "org.onlyoffice.desktopeditors" "com.skype.Client" "org.raspberrypi.rpi-imager" "org.gnome.Firmware" "org.kde.kdenlive" "org.inkscape.Inkscape" "org.fedoraproject.MediaWriter" "org.gnome.gedit" "ca.littlesvr.asunder" "ar.com.tuxguitar.TuxGuitar" "org.chromium.Chromium" "org.gnome.gitlab.YaLTeR.VideoTrimmer" "com.warlordsoftwares.media-downloader" "org.gtkhash.gtkhash" "fr.handbrake.ghb" "com.anydesk.Anydesk" "com.valvesoftware.Steam" "net.fasterland.converseen" "com.transmissionbt.Transmission") 
 # Alterar para a versão desejada
