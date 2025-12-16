@@ -11,19 +11,15 @@ ostree remote refs fedora;##Pesquisar a versão disponível##
 rpm-ostree upgrade --preview; ##Conferência dos pacotes##
 rpm-ostree upgrade; ##Atualização do sistema##
 
-#flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo; ##Instalação dos pacotes Flatpak##
 
-        ##Recomendação flatpak para Steam
-#rpm-ostree install steam-devices
-
-        ##Instalação do distrobox##
-#rpm-ostree install -y distrobox podman fastfetch rsync;
+#rpm-ostree install -y kitty steam-devices dvd+rw-tools distrobox podman fastfetch rsync aria2;
 
         ##Criação do container toolbox##
 #toolbox create --release 43;
+                ###Pacotes a instalar no toolbox###
+                #sudo dnf install -y gnome-boxes;
 
-        ###Pacotes a instalar no toolbox###
-        #sudo dnf install -y gnome-boxes;
+#flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo; ##Instalação dos pacotes Flatpak##
 
 ##Após o reboot##
         ##Criação dos containeres no distrobox##
@@ -37,11 +33,11 @@ rpm-ostree upgrade; ##Atualização do sistema##
 distrobox-upgrade --all -v;
 
         ##Instalação dos pacotes nos containeres distrobox##
-#distrobox enter archlinux -- sudo pacman -S --noconfirm fastfetch simple-scan thunderbird audacious gimp transmission-gtk rpi-imager firefox gwenview kate kdenlive yt-dlp;
+#distrobox enter archlinux -- sudo pacman -S --noconfirm fastfetch simple-scan thunderbird audacious gimp transmission-gtk rpi-imager firefox gwenview kate kdenlive yt-dlp xfburn;
 #distrobox enter fedora -- sudo dnf5 install -y audacity inkscape;
 
         ##Exportação dos pacotes instalados no distrobox archlinux##
-#distrobox enter archlinux -- distrobox-export --app simple-scan; distrobox enter archlinux -- distrobox-export --app thunderbird; distrobox enter archlinux -- distrobox-export --app audacious; distrobox enter archlinux -- distrobox-export --app gimp; distrobox enter archlinux -- distrobox-export --app transmission-gtk; distrobox enter archlinux -- distrobox-export --app rpi-imager; distrobox enter archlinux -- distrobox-export --app firefox; distrobox enter archlinux -- distrobox-export --app gwenview; distrobox enter archlinux -- distrobox-export --app kate; distrobox enter archlinux -- distrobox-export --app kdenlive;
+#distrobox enter archlinux -- distrobox-export --app simple-scan; distrobox enter archlinux -- distrobox-export --app thunderbird; distrobox enter archlinux -- distrobox-export --app audacious; distrobox enter archlinux -- distrobox-export --app gimp; distrobox enter archlinux -- distrobox-export --app transmission-gtk; distrobox enter archlinux -- distrobox-export --app rpi-imager; distrobox enter archlinux -- distrobox-export --app firefox; distrobox enter archlinux -- distrobox-export --app gwenview; distrobox enter archlinux -- distrobox-export --app kate; distrobox enter archlinux -- distrobox-export --app kdenlive distrobox enter archlinux -- distrobox-export --app xfburn;
 
         ##Exportação dos pacotes instalados no distrobox fedora##
 #distrobox enter fedora -- distrobox-export --app audacity; distrobox enter fedora -- distrobox-export --app inkscape;
@@ -52,7 +48,6 @@ distrobox-upgrade --all -v;
 #sudo apt update;
 #apt install -y lutris
 #distrobox-export --app lutris
-
 
         ##Instalação dos pacotes flatpaks##
 #sudo flatpak install flathub com.spotify.Client -y; sudo flatpak install flathub com.valvesoftware.Steam -y; sudo flatpak install flathub us.zoom.Zoom -y; sudo flatpak install flathub org.onlyoffice.desktopeditors -y; sudo flatpak install flathub com.adobe.Flash-Player-Projector -y; sudo flatpak install flathub com.github.IsmaelMartinez.teams_for_linux -y; sudo flatpak install flathub org.chromium.Chromium -y; sudo flatpak install flathub org.fedoraproject.MediaWriter -y; sudo flatpak install flathub org.kde.kget -y; sudo flatpak install flathub org.videolan.VLC -y; sudo flatpak install flathub net.mkiol.SpeechNote -y; flatpak install flathub com.saivert.pwvucontrol -y; flatpak install flathub io.github.dvlv.boxbuddyrs -y;
