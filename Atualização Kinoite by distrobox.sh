@@ -3,6 +3,11 @@
             ###Fedora Kinoite by distrobox###
             ###Atualização completa do sistema###
 
+##baixar o shell script do github
+#sudo xbps-install -S -y git;
+#git clone https://github.com/robsonnakane/Fedora-Linux.git;
+#chmod +x 'nome do arquivo';
+
 #sudo grub2-mkconfig -o /boot/grub2/grub.cfg; ##Atualiza o grub
 rpm-ostree cancel; ##Cancela a atualização automática dos repositórios##
 rpm-ostree cleanup -m; rpm-ostree cleanup -r; rpm-ostree cleanup -p; rpm-ostree cleanup -b; rpm-ostree override reset --all; ##Limpeza cache##
@@ -50,7 +55,7 @@ distrobox-upgrade --all -v;
 #distrobox-export --app lutris
 
         ##Instalação dos pacotes flatpaks##
-#sudo flatpak install flathub com.spotify.Client -y; sudo flatpak install flathub com.valvesoftware.Steam -y; sudo flatpak install flathub us.zoom.Zoom -y; sudo flatpak install flathub org.onlyoffice.desktopeditors -y; sudo flatpak install flathub com.adobe.Flash-Player-Projector -y; sudo flatpak install flathub com.github.IsmaelMartinez.teams_for_linux -y; sudo flatpak install flathub org.chromium.Chromium -y; sudo flatpak install flathub org.fedoraproject.MediaWriter -y; sudo flatpak install flathub org.kde.kget -y; sudo flatpak install flathub org.videolan.VLC -y; sudo flatpak install flathub net.mkiol.SpeechNote -y; flatpak install flathub com.saivert.pwvucontrol -y; flatpak install flathub io.github.dvlv.boxbuddyrs -y;
+#sudo flatpak install flathub com.spotify.Client -y; sudo flatpak install flathub com.valvesoftware.Steam -y; sudo flatpak install flathub us.zoom.Zoom -y; sudo flatpak install flathub org.onlyoffice.desktopeditors -y; sudo flatpak install flathub com.adobe.Flash-Player-Projector -y; sudo flatpak install flathub com.github.IsmaelMartinez.teams_for_linux -y; sudo flatpak install flathub org.chromium.Chromium -y; sudo flatpak install flathub org.fedoraproject.MediaWriter -y; sudo flatpak install flathub org.kde.kget -y; sudo flatpak install flathub org.videolan.VLC -y; sudo flatpak install flathub net.mkiol.SpeechNote -y; sudo flatpak install flathub com.saivert.pwvucontrol -y; sudo flatpak install flathub io.github.dvlv.boxbuddyrs -y;
 
         ##Atualização do Flatpak##
 flatpak update -y;
