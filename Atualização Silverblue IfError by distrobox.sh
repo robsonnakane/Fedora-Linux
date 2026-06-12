@@ -3,6 +3,9 @@
 ###Fedora Silverblue###
 ###Atualização completa do sistema###
 
+set -euo pipefail
+##O comando "set -euo" faz o script parar imediatamente caso qualquer comando dentro dele retorne um erro (exit code diferente de 0).(-e → para no erro) (-u → trata variáveis não definidas como erro) (-o pipefail → considera falha em pipe () se qualquer comando falhar
+
 ##Execução do arquivo de atualização no terminal##
 #/var/home/archlinux/Documentos/'Atualização Silverblue.sh'#
 
@@ -10,17 +13,31 @@
 #nano /var/home/archlinux/Documentos/'Atualização Silverblue.sh'#
 
 ##Cancela a atualização automática dos repositórios##
-rpm-ostree cancel || exit &&
+rpm-ostree cancel &&\
+echo $?
 ##Limpeza cache##
-rpm-ostree cleanup -mrpb  || exit && rpm-ostree override reset --all || exit &&
+rpm-ostree cleanup -mrpb  && \
+echo $?
+rpm-ostree override reset --all && \
+echo $?
 ##Atualizção dos repositórios##
-rpm-ostree refresh-md || exit &&
+rpm-ostree refresh-md && \
+echo $?
 ##Pesquisar a versão disponível##
-ostree remote refs fedora;
+ostree remote refs fedora && \
+echo $?
+rpm-ostree status && \
+echo $?
+##Atualização do Flatpak##
+flatpak update -y && \
+echo $?
+##Atualização dos pacotes instalados via distrobox##
+distrobox enter archlinux -- sudo pacman -Syyuu --noconfirm && \
+echo $?
 ##Conferência dos pacotes##
-rpm-ostree upgrade --preview;
+rpm-ostree upgrade --preview && \
 ##Atualização do sistema##
-rpm-ostree upgrade || exit &&
+rpm-ostree upgrade && \
 
 #Tailscale##
 #rpm-ostree install tailscale distrobox btop; 
@@ -34,23 +51,15 @@ rpm-ostree upgrade || exit &&
 ##Exportação dos pacotes instalados no distrobox##
 #distrobox enter archlinux -- distrobox-export --app simple-scan; distrobox enter archlinux -- distrobox-export --app kdenlive; distrobox enter archlinux -- distrobox-export --app inkscape; distrobox enter archlinux -- distrobox-export --app thunderbird; distrobox enter archlinux -- distrobox-export --app audacious; distrobox enter archlinux -- distrobox-export --app gimp; distrobox enter archlinux -- distrobox-export --app vlc; distrobox enter archlinux -- distrobox-export --app transmission-gtk; distrobox enter archlinux -- distrobox-export --app rpi-imager; distrobox enter archlinux -- distrobox-export --app gwenview; distrobox enter archlinux -- distrobox-export --app kate;
 
-
-##Atualização dos pacotes instalados via distrobox## 
-distrobox enter archlinux -- sudo pacman -Syyuu --noconfirm || exit &&
-
 ##Atualização de versão##
 #rpm-ostree rebase fedora:fedora/44/x86_64/silverblue;
 
 ##Instalação dos programas Flatpak##
-#flatpak install flathub com.spotify.Client -uy;flatpak install flathub us.zoom.Zoom -uy; flatpak install flathub org.onlyoffice.desktopeditors -uy; flatpak install flathub com.adobe.Flash-Player-Projector -uy; flatpak install flathub com.github.IsmaelMartinez.teams_for_linux -uy; flatpak install flathub org.fedoraproject.MediaWriter -uy; flatpak install flathub org.kde.kget -uy; flatpak install flathub org.videolan.VLC -uy; flatpak install flathub net.mkiol.SpeechNote -uy; flatpak install flathub com.saivert.pwvucontrol -uy; flatpak install flathub io.github.dvlv.boxbuddyrs -uy; flatpak install flathub org.telegram.desktop -uy; flatpak install flathub com.obsproject.Studio -uy; flatpak install flathub org.audacityteam.Audacity -uy; flatpak install flathub com.github.tchx84.Flatseal -uy; flatpak install flathub app.zen_browser.zen -uy;
-
-##Atualização do Flatpak##
-flatpak update -y || exit &&
-
-systemctl reboot -i
-
+#flatpak install flathub com.spotify.Client -uy;flatpak install flathub us.zoom.Zoom -uy; flatpak install flathub org.onlyoffice.desktopeditors -uy; flatpak install flathub com.adobe.Flash-Player-Projector -uy; flatpak install flathub com.github.IsmaelMartinez.teams_for_linux -uy; flatpak install flathub org.fedoraproject.MediaWriter -uy; flatpak install flathub org.kde.kget -uy; flatpak install flathub org.videolan.VLC -uy; flatpak install flathub net.mkiol.SpeechNote -uy; flatpak install flathub com.saivert.pwvucontrol -uy; flatpak install flathub io.github.dvlv.boxbuddyrs -uy; flatpak install flathub org.telegram.desktop -uy; flatpak install flathub com.obsproject.Studio -uy; flatpak install flathub org.audacityteam.Audacity -uy; flatpak install flathub com.github.tchx84.Flatseal -uy; flatpak install flathub app.zen_browser.zen -uy; flatpak install flathub com.google.ChromeDev -uy;
 
 ##Baixar um vídeo em melhor qualidade:##
 #distrobox enter archlinux -- yt-dlp URL
     ##Baixar só áudio (MP3):
 #distrobox enter archlinux -- yt-dlp -x --audio-format mp3 URL
+
+systemctl reboot -i
