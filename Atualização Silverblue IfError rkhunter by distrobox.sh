@@ -12,6 +12,7 @@ set -euo pipefail
 #Edição do arquivo no terminal#
 #nano /var/home/archlinux/Documentos/'Atualização Silverblue.sh'#
 
+fastfetch && \
 ##Cancela a atualização automática dos repositórios##
 rpm-ostree cancel && \
 echo "$?"
@@ -33,6 +34,7 @@ echo "$?"
 ##Atualização e verificação do rkhunter
 toolbox run -c fedora-toolbox-44 sudo rkhunter --update --propupd && \
 echo "$?"
+fastfetch && \
 toolbox run -c fedora-toolbox-44 sudo rkhunter --check --skip-keypress --report-warnings-only && \
 echo "$?"
 rpm-ostree status && \
