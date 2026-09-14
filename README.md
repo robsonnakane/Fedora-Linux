@@ -1,11 +1,7 @@
 # Fedora
-Meu Script de instalação de programas no Fedora Workstation.
+Meus Scripts de instalação de programas e atualizações para todos os sabores do Fedora Linux.
 
-Este script está escrito com o objetivo de atualizar e instalar os meus programas favoritos quando estou com uma instalação nova do Fedora Linux Workstation instalada em qualquer computador que eu esteja utilizando.
-
-Existem duas formas de instalação do Fedora Linux Workstation: A versão completa e a versão de instalação mínima.
-
-Ambas estão contempladas como comentários.
+Os scripts possuem como objetivo atualizar e instalar os meus programas favoritos quando estou com uma instalação nova do Fedora Linux instalada em qualquer computador que eu esteja utilizando.
 
 Quando há apenas 1 # significa que é um comando, ou seja se retirada a # inicial quando se executar o arquivo ele irá realizar aquele comando.
 
